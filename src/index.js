@@ -9,7 +9,8 @@ const {
     lightningChart,
     AxisTickStrategies,
     UIOrigins,
-    DataPatterns
+    DataPatterns,
+    Themes
 } = lcjs
 
 // Create a XY Chart.
