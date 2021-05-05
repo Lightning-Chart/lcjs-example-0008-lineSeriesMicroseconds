@@ -61,6 +61,7 @@ lineSeries.axisX
 * [XY cartesian chart]
 * [Line series]
 * [Numeric Axis tick strategy]
+* [Data patterns]
 
 
 ## Support
@@ -84,7 +85,8 @@ Direct developer email support can be purchased through a [Support Plan][4] or b
 © Arction Ltd 2009-2020. All rights reserved.
 
 
-[XY cartesian chart]: https://www.arction.com/lightningchart-js-api-documentation/v2.2.0/classes/chartxy.html
-[Line series]: https://www.arction.com/lightningchart-js-api-documentation/v2.2.0/classes/lineseries.html
-[Numeric Axis tick strategy]: https://www.arction.com/lightningchart-js-api-documentation/v2.2.0/globals.html#axistickstrategies.numeric
+[XY cartesian chart]: https://www.arction.com/lightningchart-js-api-documentation/v3.0.0/classes/chartxy.html
+[Line series]: https://www.arction.com/lightningchart-js-api-documentation/v3.0.0/classes/lineseries.html
+[Numeric Axis tick strategy]: https://www.arction.com/lightningchart-js-api-documentation/v3.0.0/globals.html#axistickstrategies.numeric
+[Data patterns]: https://www.arction.com/lightningchart-js-api-documentation/v3.0.0/interfaces/datapattern.html
 

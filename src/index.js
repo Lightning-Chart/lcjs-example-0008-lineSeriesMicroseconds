@@ -8,8 +8,6 @@ const lcjs = require('@arction/lcjs')
 const {
     lightningChart,
     AxisTickStrategies,
-    UIOrigins,
-    DataPatterns,
     Themes
 } = lcjs
 
@@ -22,8 +20,15 @@ const chart = lightningChart().ChartXY({
     })
     .setTitle('High resolution voltage measurement')
 
-// Create Line series.
-const lineSeries = chart.addLineSeries({ dataPattern: DataPatterns.horizontalProgressive })
+// Create line series optimized for regular progressive X data.
+const lineSeries = chart.addLineSeries({
+    dataPattern: {
+        // pattern: 'ProgressiveX' => Each consecutive data point has increased X coordinate.
+        pattern: 'ProgressiveX',
+        // regularProgressiveStep: true => The X step between each consecutive data point is regular (for example, always `1.0`).
+        regularProgressiveStep: true,
+    }
+})
     .setName('Voltage')
 
 // Axes can't properly scroll data with microseconds precision - define a factor to scale all X values with.
@@ -47,14 +52,6 @@ chart.getDefaultAxisY()
             voltage.toFixed( 2 ) + ' V'
         )
     )
-
-const legend = chart.addLegendBox()
-    .setOrigin(UIOrigins.RightTop)
-    .setPosition({ x: 90, y: 90 })
-    .setMargin({ left: 10, right: 10, top: 10, bottom: 10 })
-
-// Add Chart to LegendBox.
-legend.add(chart)
 
 const renderData = ( data ) => {
     // Add data.
