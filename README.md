@@ -1,6 +1,6 @@
-# Line Series Microseconds
+# JavaScript Microseconds Line Chart
 
-![Line Series Microseconds](lineSeriesMicroseconds.png)
+![JavaScript Microseconds Line Chart](lineSeriesMicroseconds.png)
 
 This demo application belongs to the set of examples for LightningChart JS, data visualization library for JavaScript.
 
