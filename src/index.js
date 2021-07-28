@@ -13,7 +13,7 @@ const {
 
 // Create a XY Chart.
 const chart = lightningChart().ChartXY({
-    // theme: Themes.dark
+    // theme: Themes.darkGold
 })
     .setPadding({
         right: 50
