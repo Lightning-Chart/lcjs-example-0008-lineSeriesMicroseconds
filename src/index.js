@@ -2,7 +2,7 @@
  * LightningChartJS example that showcases an Axis interval that is depicted as microseconds.
  */
 // Import LightningChartJS
-const lcjs = require('@arction/lcjs')
+const lcjs = require('@lightningchart/lcjs')
 
 // Extract required parts from LightningChartJS.
 const { lightningChart, AxisTickStrategies, Themes } = lcjs
