@@ -5,7 +5,7 @@
 const lcjs = require('@lightningchart/lcjs')
 
 // Extract required parts from LightningChartJS.
-const { lightningChart, AxisTickStrategies, Themes } = lcjs
+const { lightningChart, AxisTickStrategies, emptyFill, Themes } = lcjs
 
 // Create a XY Chart.
 const chart = lightningChart({
@@ -14,21 +14,14 @@ const chart = lightningChart({
     .ChartXY({
         theme: Themes[new URLSearchParams(window.location.search).get('theme') || 'darkGold'] || undefined,
     })
-    .setPadding({
-        right: 50,
-    })
     .setTitle('High resolution voltage measurement')
 
 // Create line series optimized for regular progressive X data.
 const lineSeries = chart
-    .addLineSeries({
-        dataPattern: {
-            // pattern: 'ProgressiveX' => Each consecutive data point has increased X coordinate.
-            pattern: 'ProgressiveX',
-            // regularProgressiveStep: true => The X step between each consecutive data point is regular (for example, always `1.0`).
-            regularProgressiveStep: true,
-        },
+    .addPointLineAreaSeries({
+        dataPattern: 'ProgressiveX',
     })
+    .setAreaFillStyle(emptyFill)
     .setName('Voltage')
 
 // Axes can't properly scroll data with microseconds precision - define a factor to scale all X values with.
