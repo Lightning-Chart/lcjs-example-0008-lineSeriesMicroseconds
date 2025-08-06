@@ -12,16 +12,19 @@ const chart = lightningChart({
             resourcesBaseUrl: new URL(document.head.baseURI).origin + new URL(document.head.baseURI).pathname + 'resources/',
         })
     .ChartXY({
+        legend: { visible: false },
         theme: Themes[new URLSearchParams(window.location.search).get('theme') || 'darkGold'] || undefined,
     })
     .setTitle('High resolution voltage measurement')
 
 // Create line series optimized for regular progressive X data.
 const lineSeries = chart
-    .addPointLineAreaSeries({
-        dataPattern: 'ProgressiveX',
+    .addLineSeries({
+        schema: {
+            x: { pattern: 'progressive' },
+            y: { pattern: null },
+        },
     })
-    .setAreaFillStyle(emptyFill)
     .setName('Voltage')
 
 // Axes can't properly scroll data with microseconds precision - define a factor to scale all X values with.
@@ -48,7 +51,7 @@ chart
 
 const renderData = (data) => {
     // Add data.
-    lineSeries.add(data.map((p) => ({ x: p.x * dataScaleX, y: p.y })))
+    lineSeries.appendJSON(data.map((p) => ({ x: p.x * dataScaleX, y: p.y })))
 }
 
 // Data where 'x' = time in seconds and 'y' = voltage (V).
