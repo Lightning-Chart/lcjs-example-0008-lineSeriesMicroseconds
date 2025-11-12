@@ -24,6 +24,7 @@ const lineSeries = chart
             x: { pattern: 'progressive' },
             y: { pattern: null },
         },
+        automaticColorIndex: 1,
     })
     .setName('Voltage')
 
