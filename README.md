@@ -28,7 +28,7 @@ LightningChart JS Axis is limited by floating point precision so when using real
 const dataScaleX = 1 * Math.pow(1000, 3) // 1 us
 const renderData = (data) => {
     // Add data.
-    lineSeries.add(data.map((p) => ({ x: p.x * dataScaleX, y: p.y })))
+    lineSeries.appendJSON(data.map((p) => ({ x: p.x * dataScaleX, y: p.y })))
 }
 ```
 
@@ -80,8 +80,8 @@ Direct developer email support can be purchased through a [Support Plan][4] or b
 © LightningChart Ltd 2009-2026. All rights reserved.
 
 
-[XY cartesian chart]: https://lightningchart.com/js-charts/api-documentation/v8.3.0/classes/ChartXY.html
-[Line series]: https://lightningchart.com/js-charts/api-documentation/v8.3.0/classes/PointLineAreaSeries.html
-[Numeric Axis tick strategy]: https://lightningchart.com/js-charts/api-documentation/v8.3.0/variables/AxisTickStrategies.html
-[Data patterns]: https://lightningchart.com/js-charts/api-documentation/v8.3.0/types/DataPattern.html
+[XY cartesian chart]: https://lightningchart.com/js-charts/api-documentation/v9.0.0/classes/ChartXY.html
+[Line series]: https://lightningchart.com/js-charts/api-documentation/v9.0.0/classes/PointLineAreaSeries.html
+[Numeric Axis tick strategy]: https://lightningchart.com/js-charts/api-documentation/v9.0.0/variables/AxisTickStrategies.html
+[Data patterns]: https://lightningchart.com/js-charts/api-documentation/v9.0.0/types/DataPattern.html
 
